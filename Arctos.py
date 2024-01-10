@@ -154,9 +154,9 @@ class RobotPost(object):
             if not code.endswith('()'):
                 code = code + '()'
             if code == 'Open()':
-                self.addline('M97 B40 T1')  # Add the G-code instructions for the Open subprogram
+                self.addline('M97 G4P1 B40 T1')  # Add the G-code instructions for the Open subprogram
             elif code == 'Close()':
-                self.addline('M97 B0 T1')  # Add the G-code instructions for the Close subprogram
+                self.addline('M97 G4P1 B0 T1')  # Add the G-code instructions for the Close subprogram
             else:
                 self.addline(code)
         else:
